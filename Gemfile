@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+group :development do
+  gem 'dotenv-rails', :require => 'dotenv/rails-now'
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
@@ -44,3 +47,6 @@ end
 gem 'mongoid', '~> 5.0.0'
 
 gem 'grape'
+gem 'grape-swagger'
+gem 'grape-entity'
+gem 'grape-cors', :git => "git://github.com/cambridge-healthcare/grape-cors.git"
