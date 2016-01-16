@@ -23,7 +23,7 @@ module API
 
     get 'zzt' do
 
-      raise "Error!"
+      {:status => Carousel.get_status}
     end
 
   end

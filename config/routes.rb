@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'desktop#index'
+  root 'welcome#index'
 
 
   #API

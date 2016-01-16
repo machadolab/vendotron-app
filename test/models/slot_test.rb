@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DesktopControllerTest < ActionController::TestCase
+class SlotTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
