@@ -9,20 +9,20 @@
 
     $('#column-input').change(function() {
       column = $(this).val();
+      setIcSrc();
       return column != '' && row > 0;
     });
 
     $('#row-input').change(function() {
       row = $(this).val();
+      setIcSrc();
       return column != '' && row > 0;
     });
 
   });
 
-  function showItem() {
-    if (column != '' && row > 0) {
-      console.log("Selected column " + column + " and row " + row);
-    }
+  function setIcSrc() {
+    $('#slot-form').attr('ic-src','/slot/'+column+row);
   }
 
 </script>
@@ -31,14 +31,14 @@
   <div class="col-sm-5 center-block col-centered text-center">
 
     <h3>The Item I Want Is In Slot</h3>
-    <form class="form-horizontal" ic-trigger-on="change" ic-target="#slot-detail" ic-src="/slot">
+    <form id="slot-form" class="form-horizontal" ic-trigger-on="change" ic-target="#slot-detail" ic-src="/slot">
 
       <%= select_tag 'column', options_for_select(Carousel::COLUMNS), :include_blank => true,
-                     id: 'column-input', class: 'selectpicker slot-select', title: "Column?",
+                     id: 'column-input', class: 'selectpicker slot-select', title: "COL?",
                      data: {style: 'btn-primary'} %>
 
       <%= select_tag 'row', options_for_select(Carousel::ROWS), :include_blank => true,
-                     id: 'row-input', class: 'selectpicker slot-select', title: "Row?",
+                     id: 'row-input', class: 'selectpicker slot-select', title: "ROW?",
                      data: {style: 'btn-primary'} %>
 
     </form>
