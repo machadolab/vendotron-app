@@ -1,0 +1,23 @@
+{
+  "name": "vendotron5000-app",
+  "homepage": "https://github.com/machadolab/vendotron5000-app",
+  "authors": [
+    "Mike Machado <mike@machadolab.com>"
+  ],
+  "description": "Vendotron 5000",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-select" : "1.9.3",
+    "intercooler-js" : "0.9.3"
+  }
+}

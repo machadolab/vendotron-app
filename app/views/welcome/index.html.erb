@@ -1,1 +1,53 @@
-hi there
+
+<script type="text/javascript">
+
+  var column = '';
+  var row = 0;
+
+  $(function() {
+    console.log("ready");
+
+    $('#column-input').change(function() {
+      column = $(this).val();
+      return column != '' && row > 0;
+    });
+
+    $('#row-input').change(function() {
+      row = $(this).val();
+      return column != '' && row > 0;
+    });
+
+  });
+
+  function showItem() {
+    if (column != '' && row > 0) {
+      console.log("Selected column " + column + " and row " + row);
+    }
+  }
+
+</script>
+
+<div class="row">
+  <div class="col-sm-5 center-block col-centered text-center">
+
+    <h3>The Item I Want Is In Slot</h3>
+    <form class="form-horizontal" ic-trigger-on="change" ic-target="#slot-detail" ic-src="/slot">
+
+      <%= select_tag 'column', options_for_select(Carousel::COLUMNS), :include_blank => true,
+                     id: 'column-input', class: 'selectpicker slot-select', title: "Column?",
+                     data: {style: 'btn-primary'} %>
+
+      <%= select_tag 'row', options_for_select(Carousel::ROWS), :include_blank => true,
+                     id: 'row-input', class: 'selectpicker slot-select', title: "Row?",
+                     data: {style: 'btn-primary'} %>
+
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-5 center-block col-centered text-center">
+    <div id="slot-detail">
+    </div>
+  </div>
+</div>

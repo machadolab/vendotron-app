@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require bootstrap-select/js/bootstrap-select
+//= require intercooler-js/src/intercooler
 //= require_tree .

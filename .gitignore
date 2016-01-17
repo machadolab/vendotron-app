@@ -14,4 +14,5 @@
 
 .idea
 
+vendor/assets/bower_components
 .env.local

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  resources :slot
 
   #API
   mount API::APIRoot => '/v1'
