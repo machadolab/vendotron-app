@@ -22,7 +22,7 @@
   });
 
   function setIcSrc() {
-    $('#slot-form').attr('ic-src','/slot/'+column+row);
+    $('#slot-form').attr('ic-src','/slots/'+column+row);
   }
 
 </script>
@@ -31,7 +31,7 @@
   <div class="col-sm-5 center-block col-centered text-center">
 
     <h3>The Item I Want Is In Slot</h3>
-    <form id="slot-form" class="form-horizontal" ic-trigger-on="change" ic-target="#slot-detail" ic-src="/slot">
+    <form id="slot-form" class="form-horizontal" ic-trigger-on="change" ic-target="#slot-detail" ic-src="/slots">
 
       <%= select_tag 'column', options_for_select(Carousel::COLUMNS), :include_blank => true,
                      id: 'column-input', class: 'selectpicker slot-select', title: "COL?",

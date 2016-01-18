@@ -8,4 +8,19 @@ class Customer
 
   has_many :purchases
 
+
+  def get_or_create_stripe_customer_id(token)
+
+    unless stripe_customer_id
+      stripe_customer = Stripe::Customer.create(
+          :email => self.email,
+          :source => token
+      )
+      self.stripe_customer_id = stripe_customer.id
+      self.save
+    end
+
+    self.stripe_customer_id
+  end
+
 end

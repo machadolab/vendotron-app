@@ -35,3 +35,5 @@ gem 'grape-entity'
 gem 'grape-cors', :git => "git://github.com/cambridge-healthcare/grape-cors.git"
 
 gem "bower-rails", "~> 0.10.0"
+
+gem "stripe"

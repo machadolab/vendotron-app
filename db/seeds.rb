@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Carousel::COLUMNS.each { |col| Carousel::ROWS.each { |row| Slot.create(column: col, row: row) } }
