@@ -6,7 +6,7 @@
 <div class="row">
   <div class="col-sm-5 center-block col-centered text-center">
 
-    <h3>The Item I Want Is In Slot</h3>
+    <h3>Pick A Slot</h3>
     <form id="slot-form" class="form-horizontal" ic-trigger-on="change" ic-target="#slot-detail" ic-push-url="true" ic-src="/slots">
 
       <%= select_tag 'column', options_for_select(Carousel::COLUMNS, @slot_column), :include_blank => true,
