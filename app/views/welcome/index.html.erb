@@ -1,53 +1,53 @@
 
 <script type="text/javascript">
 
-  var column = '';
-  var row = 0;
-
-  $(function() {
-    console.log("ready");
-
-    $('#column-input').change(function() {
-      column = $(this).val();
-      setIcSrc();
-      return column != '' && row > 0;
-    });
-
-    $('#row-input').change(function() {
-      row = $(this).val();
-      setIcSrc();
-      return column != '' && row > 0;
-    });
-
-  });
-
-  function setIcSrc() {
-    $('#slot-form').attr('ic-src','/slots/'+column+row);
-  }
+//  var column = '';
+//  var row = 0;
+//
+//  $(function() {
+//    console.log("ready");
+//
+//    $('#column-input').change(function() {
+//      column = $(this).val();
+//      setIcSrc();
+//      return column != '' && row > 0;
+//    });
+//
+//    $('#row-input').change(function() {
+//      row = $(this).val();
+//      setIcSrc();
+//      return column != '' && row > 0;
+//    });
+//
+//  });
+//
+//  function setIcSrc() {
+//    $('#slot-form').attr('ic-src','/slots/'+column+row);
+//  }
 
 </script>
+GO AWAY
+<!--<div class="row">-->
+  <!--<div class="col-sm-5 center-block col-centered text-center">-->
 
-<div class="row">
-  <div class="col-sm-5 center-block col-centered text-center">
-
-    <h3>The Item I Want Is In Slot</h3>
-    <form id="slot-form" class="form-horizontal" ic-trigger-on="change" ic-target="#slot-detail" ic-src="/slots">
+    <!--<h3>The Item I Want Is In Slot</h3>-->
+    <!--<form id="slot-form" class="form-horizontal" ic-trigger-on="change" ic-target="#slot-detail" ic-src="/slots">-->
 
       <%= select_tag 'column', options_for_select(Carousel::COLUMNS), :include_blank => true,
-                     id: 'column-input', class: 'selectpicker slot-select', title: "COL?",
+#                      id: 'column-input', class: 'selectpicker slot-select', title: "COL?",
                      data: {style: 'btn-primary'} %>
 
       <%= select_tag 'row', options_for_select(Carousel::ROWS), :include_blank => true,
-                     id: 'row-input', class: 'selectpicker slot-select', title: "ROW?",
+#                      id: 'row-input', class: 'selectpicker slot-select', title: "ROW?",
                      data: {style: 'btn-primary'} %>
 
-    </form>
-  </div>
-</div>
+    <!--</form>-->
+  <!--</div>-->
+<!--</div>-->
 
-<div class="row">
-  <div class="col-sm-5 center-block col-centered text-center">
-    <div id="slot-detail">
-    </div>
-  </div>
-</div>
+<!--<div class="row">-->
+  <!--<div class="col-sm-5 center-block col-centered text-center">-->
+    <!--<div id="slot-detail">-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->

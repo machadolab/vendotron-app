@@ -1,19 +1,28 @@
 class SlotsController < ApplicationController
-  before_action :set_slot, only: [:show, :edit, :update, :destroy]
 
   def index
-    @slots = Slot.all
+    render :show
   end
 
   def show
-    @purchase = Purchase.new(slot: @slot, item: @slot.item)
+    @slot_column = ''
+    @slot_row = ''
+
+    unless params[:id].blank?
+
+      @slot = Slot.find(params[:id])
+      @purchase = Purchase.new(slot: @slot, item: @slot.item)
+
+      @slot_column = @slot.column
+      @slot_row = @slot.row
+
+      if intercooler.current_target? 'slot-detail'
+        render :partial => 'slot_detail'
+      end
+    end
   end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
-  def set_slot
-    @slot = Slot.find(params[:id])
-  end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def slot_params

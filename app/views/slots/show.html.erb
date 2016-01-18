@@ -1,35 +1,30 @@
-<% if @slot.empty  %>
+<script type="text/javascript">
+  column = '<%= @slot_column %>';
+  row = '<%= @slot_row %>';
+</script>
 
-    <div class="alert alert-warning"><em>Slot <strong><%= @slot.id %></strong> is currently empty</em></div>
+<div class="row">
+  <div class="col-sm-5 center-block col-centered text-center">
 
-<% else  %>
+    <h3>The Item I Want Is In Slot</h3>
+    <form id="slot-form" class="form-horizontal" ic-trigger-on="change" ic-target="#slot-detail" ic-push-url="true" ic-src="/slots">
 
-    <h2><%= @slot.item.name %></h2>
-    <img class="item-img" src="<%= @slot.item.picture_url %>"/>
-    <p><%= @slot.item.description %></p>
+      <%= select_tag 'column', options_for_select(Carousel::COLUMNS, @slot_column), :include_blank => true,
+                     id: 'column-input', class: 'selectpicker slot-select', title: "COL?",
+                     data: {style: 'btn-primary'} %>
 
-    <% unless @slot.item.more_info_url.blank? %>
-      <a href="<%= @slot.item.more_info_url %>" target="_blank">More Info...</a>
-    <% end %>
+      <%= select_tag 'row', options_for_select(Carousel::ROWS, @slot_row), :include_blank => true,
+                     id: 'row-input', class: 'selectpicker slot-select', title: "ROW?",
+                     data: {style: 'btn-primary'} %>
 
-    <h3><%= number_to_currency @slot.item.price %></h3>
+    </form>
+  </div>
+</div>
 
-    <div id="buy-form">
-      <%= form_for @purchase do |f| %>
-        <%= f.hidden_field :item_id %>
-        <%= f.hidden_field :slot_id %>
-        <script
-        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key="<%= ENV['STRIPE_PUBLIC_API_KEY'] %>"
-        data-image="<%= image_url 'logo.png' %>"
-        data-name="<%= @slot.item.name %>"
-        data-description="Vendotron 5000 slot <%= @slot.id %>"
-        data-amount="<%= @slot.item.price * 100 %>"
-        data-locale="auto"
-        data-label="Buy It Now"
-        data-bitcoin="true">
-        </script>
-      <% end %>
+<div class="row">
+  <div class="col-sm-5 center-block col-centered text-center">
+    <div id="slot-detail">
+       <%= render :partial => 'slot_detail' %>
     </div>
-
-<% end  %>
+  </div>
+</div>

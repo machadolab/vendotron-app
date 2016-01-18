@@ -16,3 +16,28 @@
 //= require bootstrap-select/js/bootstrap-select
 //= require intercooler-js/src/intercooler
 //= require_tree .
+
+
+var column = '';
+var row = '';
+
+$(function() {
+    console.log("ready");
+
+    $('#column-input').change(function() {
+        column = $(this).val();
+        setIcSrc();
+        return column != '' && row != '';
+    });
+
+    $('#row-input').change(function() {
+        row = $(this).val();
+        setIcSrc();
+        return column != '' && row != '';
+    });
+
+});
+
+function setIcSrc() {
+    $('#slot-form').attr('ic-src','/slots/'+column+row);
+}

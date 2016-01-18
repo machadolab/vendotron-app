@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'welcome#index'
+  root 'slots#show'
 
   resources :slots
   resources :purchases
