@@ -11,11 +11,11 @@
 
       <%= select_tag 'column', options_for_select(Carousel::COLUMNS, @slot_column), :include_blank => true,
                      id: 'column-input', class: 'selectpicker slot-select', title: "COL?",
-                     data: {style: 'btn-primary'} %>
+                     data: {mobile: 'true', style: 'btn-primary'} %>
 
       <%= select_tag 'row', options_for_select(Carousel::ROWS, @slot_row), :include_blank => true,
                      id: 'row-input', class: 'selectpicker slot-select', title: "ROW?",
-                     data: {style: 'btn-primary'} %>
+                     data: {mobile: 'true', style: 'btn-primary'} %>
 
     </form>
   </div>

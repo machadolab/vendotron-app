@@ -221,6 +221,7 @@ DEPENDENCIES
   less-rails-bootstrap
   mongoid (~> 5.0.0)
   rails (= 4.2.5)
+  rest-client
   spring
   stripe
   therubyracer
