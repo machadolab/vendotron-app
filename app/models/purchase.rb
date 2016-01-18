@@ -6,9 +6,10 @@ class Purchase
   field :stripe_purchase_id, type: String
   field :purchase_price, type: Float
 
-  validates_numericality_of :purchase_price,
-                            :greater_than_or_equal_to => 20, :less_than_or_equal_to => 50,
-                            :message => "lame"
+  #
+  # validates_numericality_of :purchase_price,
+  #                           :greater_than_or_equal_to => 20, :less_than_or_equal_to => 50,
+  #                           :message => "lame"
 
   belongs_to :item
   belongs_to :slot
