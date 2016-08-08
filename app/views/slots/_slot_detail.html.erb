@@ -19,7 +19,7 @@
               data-key="<%= ENV['STRIPE_PUBLIC_API_KEY'] %>"
               data-image="<%= image_url 'logo.png' %>"
               data-name="<%= @slot.item.name %>"
-              data-description="Vendotron 5000 slot <%= @slot.id %>"
+              data-description="Vendotron Slot <%= @slot.id %>"
               data-amount="<%= (@slot.item.price * 100).round %>"
               data-locale="auto"
               data-label="Buy It Now"

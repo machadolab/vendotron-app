@@ -36,7 +36,7 @@ module API
       rescue
         # ignore
       end
-      'https://api.vendotron5000.com/v1'
+      'https://vendotron.example.org/v1'
     end
 
     before do

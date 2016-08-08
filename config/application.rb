@@ -30,7 +30,7 @@ class TestMiddleware
   end
 end
 
-module Vendotron5000App
+module VendotronApp
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
