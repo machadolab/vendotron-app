@@ -22,15 +22,22 @@ var column = '';
 var row = '';
 
 $(function() {
-    console.log("ready");
+    $('body').on("beforeHistorySnapshot.ic",  function(evt, elt){
+        $(elt).find('.slot-select').selectpicker('destroy');
+    });
+});
 
-    $('#column-input').change(function() {
+Intercooler.ready(function(elt) {
+
+    $(elt).find('.slot-select').selectpicker();
+
+    $(elt).find('#column-input').on('change', function() {
         column = $(this).val();
         setIcSrc();
         return column != '' && row != '';
     });
 
-    $('#row-input').change(function() {
+    $(elt).find('#row-input').on('change', function() {
         row = $(this).val();
         setIcSrc();
         return column != '' && row != '';

@@ -4,7 +4,7 @@ group :development do
   gem 'dotenv-rails', :require => 'dotenv/rails-now'
 end
 
-gem 'rails', '4.2.5'
+gem 'rails', '~> 4.2'
 gem 'uglifier', '>= 1.3.0'
 
 # Use jquery as the JavaScript library
@@ -27,7 +27,7 @@ group :development do
   gem 'spring'
 end
 
-gem 'mongoid', '~> 5.0.0'
+gem 'mongoid', '~> 5'
 
 gem 'grape'
 gem 'grape-swagger'
@@ -38,3 +38,5 @@ gem "bower-rails", "~> 0.10.0"
 
 gem "stripe"
 gem "rest-client"
+
+gem 'intercooler', :github => 'LeadDyno/intercooler-rails', :branch => 'master'

@@ -7,14 +7,14 @@
   <div class="col-sm-5 center-block col-centered text-center">
 
     <h3>Pick A Slot</h3>
-    <form id="slot-form" class="form-horizontal" ic-trigger-on="change" ic-target="#slot-detail" ic-push-url="true" ic-src="/slots">
+    <form id="slot-form" class="form-horizontal" ic-trigger-on="change" ic-target="#main-content" ic-push-url="true" ic-src="/slots">
 
       <%= select_tag 'column', options_for_select(Carousel::COLUMNS, @slot_column), :include_blank => true,
-                     id: 'column-input', class: 'selectpicker slot-select', title: "COL?",
+                     id: 'column-input', class: 'slot-select', title: "COL?",
                      data: {mobile: 'true', style: 'btn-primary'} %>
 
       <%= select_tag 'row', options_for_select(Carousel::ROWS, @slot_row), :include_blank => true,
-                     id: 'row-input', class: 'selectpicker slot-select', title: "ROW?",
+                     id: 'row-input', class: 'slot-select', title: "ROW?",
                      data: {mobile: 'true', style: 'btn-primary'} %>
 
     </form>

@@ -9,7 +9,7 @@
   <%= javascript_include_tag 'application' %>
   <script type="text/javascript">
     $('html').addClass('hidden');
-      $(function() { $('html').removeClass('hidden')});
+    $(function() { $('html').removeClass('hidden')});
   </script>
   <script type="text/javascript" src="https://checkout.stripe.com/checkout.js"></script>
   <%= csrf_meta_tags %>
@@ -24,8 +24,11 @@
       </div>
     </div>
 
-    <%= render :partial => 'shared/alerts' %>
-    <%= yield %>
+    <div id="main-content">
+      <%= render :partial => 'shared/alerts' %>
+      <%= yield %>
+    </div>
+
 
   </div> <!-- /container -->
 </body>

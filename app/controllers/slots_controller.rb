@@ -16,9 +16,9 @@ class SlotsController < ApplicationController
       @slot_column = @slot.column
       @slot_row = @slot.row
 
-      if intercooler.current_target? 'slot-detail'
-        render :partial => 'slot_detail'
-      end
+      # if intercooler.current_target? 'slot-detail'
+      #   render :partial => 'slot_detail'
+      # end
     end
   end
 
