@@ -5,6 +5,7 @@ ActiveAdmin.register Purchase do
     column :status
     column :customer
     column :item
+    column :purchase_price
     column :created_at
     actions
   end
