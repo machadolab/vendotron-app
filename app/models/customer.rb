@@ -8,6 +8,9 @@ class Customer
 
   has_many :purchases
 
+  # activeadmin mongoid fix
+  self.primary_key = :_id
+
 
   def get_or_create_stripe_customer_id(token)
 

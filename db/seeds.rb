@@ -7,3 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Carousel::COLUMNS.each { |col| Carousel::ROWS.each { |row| Slot.create(column: col, row: row) } }
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')

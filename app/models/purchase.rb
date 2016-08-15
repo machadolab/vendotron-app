@@ -15,6 +15,10 @@ class Purchase
   belongs_to :slot
   belongs_to :customer
 
+  # activeadmin mongoid fix
+  self.primary_key = :_id
+
+
   def charge(token)
 
     begin

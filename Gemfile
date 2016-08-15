@@ -27,7 +27,7 @@ group :development do
   gem 'spring'
 end
 
-gem 'mongoid', '~> 5'
+gem 'mongoid', '~> 5.0'
 
 gem 'grape'
 gem 'grape-swagger'
@@ -40,3 +40,11 @@ gem "stripe"
 gem "rest-client"
 
 gem 'intercooler', :github => 'LeadDyno/intercooler-rails', :branch => 'master'
+
+
+gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'activeadmin', github: 'activeadmin'
+gem 'activeadmin-mongoid',  :github => 'elia/activeadmin-mongoid', :branch => 'rails4-mongoid5'
+gem 'active_admin_editor'
+
+gem 'devise'

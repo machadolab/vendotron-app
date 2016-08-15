@@ -8,4 +8,7 @@ class Item
   field :price, type: Float
   field :more_info_url, type: String
 
+  # activeadmin mongoid fix
+  self.primary_key = :_id
+
 end

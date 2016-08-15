@@ -1,7 +1,7 @@
 # Vendotron Web Application
 
-This repo contains the web interface for Vendotron: The Internet Vending Machine. It is a sinatra app written
-in ruby to provide the front-end that consumers interface with in order to make purchases from a Vendotron.
+This repo contains the web interface for Vendotron: The Internet Vending Machine. It is a ruby on rails app that
+provides the front-end that consumers interface with in order to make purchases from a Vendotron.
 
 Details about the Vendotron project can be found at:
 
