@@ -16,7 +16,6 @@ ActiveAdmin.register Purchase do
 
   form do |f|
     f.inputs "Purchase Details" do
-      f.input :status
       f.input :customer
       f.input :item
       f.input :status
