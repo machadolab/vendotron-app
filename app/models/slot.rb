@@ -13,5 +13,8 @@ class Slot
   # activeadmin mongoid fix
   self.primary_key = :_id
 
+  def name
+    id
+  end
 
 end

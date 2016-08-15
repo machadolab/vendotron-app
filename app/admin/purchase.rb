@@ -1,5 +1,5 @@
 ActiveAdmin.register Purchase do
-  permit_params :status, :customer_id, :item_id, :purchase_price, :stripe_purchase_id
+  permit_params :status, :customer_id, :item_id, :slot_id, :purchase_price, :stripe_purchase_id
 
   index do
     column :status
@@ -18,6 +18,7 @@ ActiveAdmin.register Purchase do
     f.inputs "Purchase Details" do
       f.input :customer
       f.input :item
+      f.input :slot
       f.input :status
       f.input :purchase_price
       f.input :stripe_purchase_id
