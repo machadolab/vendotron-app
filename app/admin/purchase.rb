@@ -5,7 +5,9 @@ ActiveAdmin.register Purchase do
     column :status
     column :customer
     column :item
-    column :purchase_price
+    column :purchase_price do |purchase|
+      number_to_currency(purchase.purchase_price)
+    end
     column :created_at
     actions
   end
