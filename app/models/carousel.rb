@@ -9,6 +9,15 @@ class Carousel
   ROWS = 1..5
 
   def self.dispense(column, row)
+    particle_call_function('dispense', "#{column}:#{row}")
+  end
+
+  def self.open(row)
+    particle_call_function('open', row)
+  end
+
+  def self.rotate(angle)
+    particle_call_function('rotate', angle)
   end
 
   def self.ping
@@ -21,31 +30,31 @@ class Carousel
 
   private
 
-  def particle_device_url
+  def self.particle_device_url
     particle_base_url+"/devices/#{ENV['PARTICLE_DEVICE_ID']}"
   end
 
-  def particle_base_url
+  def self.particle_base_url
     "https://api.particle.io/v1"
   end
 
-  def particle_get_variable(variable)
+  def self.particle_get_variable(variable)
     get_req particle_device_url+"/#{variable}"
   end
 
-  def particle_call_function(function, arg = '')
+  def self.particle_call_function(function, arg = '')
     post_req particle_device_url+"/#{function}", {arg: arg}
   end
 
-  def particle_parse_resp(str)
+  def self.particle_parse_resp(str)
     JSON.parse str
   end
 
-  def get_req(path, params = {})
+  def self.get_req(path, params = {})
     particle_parse_resp(RestClient.get path, {:params => params.merge!(access_token: ENV['PARTICLE_AUTH_TOKEN'])})
   end
 
-  def post_req(path, params)
+  def self.post_req(path, params)
     particle_parse_resp(RestClient.post path, params.merge!(access_token: ENV['PARTICLE_AUTH_TOKEN']))
   end
 

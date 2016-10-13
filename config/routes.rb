@@ -7,8 +7,15 @@ Rails.application.routes.draw do
   root 'slots#show'
 
   resources :slots
-  resources :purchases
 
+  resources :purchases do
+    collection do
+      get 'success'
+    end
+  end
+
+  get '/open/:row' => 'welcome#open'
+  get '/rotate/:angle' => 'welcome#rotate'
 
   #API
   mount API::APIRoot => '/v1'

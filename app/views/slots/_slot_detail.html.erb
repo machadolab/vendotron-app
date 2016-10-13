@@ -2,7 +2,7 @@
     <% if !@slot.empty  %>
         <h2><%= @slot.item.name %></h2>
         <img class="item-img" src="<%= @slot.item.picture_url %>"/>
-        <p><%= @slot.item.description %></p>
+        <p><%= @slot.item.description.html_safe %></p>
 
         <% unless @slot.item.more_info_url.blank? %>
             <a href="<%= @slot.item.more_info_url %>" target="_blank">More Info...</a>

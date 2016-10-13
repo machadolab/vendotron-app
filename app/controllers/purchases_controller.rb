@@ -4,8 +4,8 @@ class PurchasesController < ApplicationController
   def create
     @purchase = Purchase.new(purchase_params)
 
-    # @item = Item.find(params[:purchase][:item_id])
-    # @slot = Slot.find(params[:purchase][:slot_id])
+    @item = Item.find(params[:purchase][:item_id])
+    @slot = Slot.find(params[:purchase][:slot_id])
 
     @customer = Customer.where(email: params[:stripeEmail]).first_or_create
     @purchase.customer = @customer
@@ -13,9 +13,9 @@ class PurchasesController < ApplicationController
     if @purchase.save
       if @purchase.charge(params[:stripeToken])
 
-        # Carousel.dispense(@slot.column, @slot.row)
+        Carousel.dispense(@slot.column, @slot.row)
 
-        render text: "woot"
+        redirect_to action: "success", slot: "#{@slot.column}#{@slot.row}"
       else
         redirect_to @purchase.slot, notice: "Purchase charge failed"
       end
@@ -23,6 +23,9 @@ class PurchasesController < ApplicationController
       redirect_to @purchase.slot, notice: "Purchase could not be saved"
     end
 
+  end
+
+  def success
   end
 
   private
